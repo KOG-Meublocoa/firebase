@@ -45,13 +45,71 @@ a:hover {
   background-color: transparent;
   text-decoration: underline;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#thumb {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flop {
+  margin-top: 30px;
+  color: white;
+}
+
+input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  padding-right: 500px;
+  margin-left: 450px;
+}
 
 .fever {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột bằng nhau */
+  gap: 20px; /* Khoảng cách giữa các div */
+}
+
+.flod {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.bo {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 29px;
+  margin-top: 10px;
+  color: red;
+}
+
+p {
+  font-size: 25px;
+  line-height: 1.5;
+}
+/* .fever {
   display: flex;
   justify-content: space-around;
   width: 100%;
   height: 200px;
-  margin-top: 80px;
+  margin-top: 1002px;
 }
 .flod {
   border: 1px solid gray;
@@ -70,7 +128,7 @@ a:hover {
 }
 .flop {
   margin-left: 270px;
-  height: 5%;
+  height: 2%;
   width: 30%;
 }
 
@@ -92,7 +150,7 @@ h1 {
   border: 1px solid gray;
   color: gray;
   width: 450px;
-  height: 1200px;
+  height: 1300px;
   text-align: center;
   justify-content: start;
   align-items: center;
@@ -106,6 +164,6 @@ h1 {
 .few {
   width: 110%;
   height: 300%;
-  margin-top: -1px;
+  margin-top: 100px;
   margin-left: 25px;
-}
+} */
