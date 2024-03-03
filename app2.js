@@ -1,4 +1,9 @@
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClIYVxneZxm3qXk8wfBDj2z42QLbwQsn4",
@@ -10,23 +15,33 @@ const firebaseConfig = {
   measurementId: "G-K38BHVKRDR",
 };
 
-
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+const SignIn = document.getElementById("SignIn");
+SignIn.addEventListener("click", function() {
+  
+  signIn()
+})
+console.log(SignIn);
 
 function signIn() {
-  const email = document.getElementById("email").value;
+  const email = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  auth
-    .signInWithEmailAndPassword(email, password)
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      showUserInfo(user);
+      console.log("dang nhap thanh cong:" + user.email);
+
+      window.location.href = "index3.html";
     })
     .catch((error) => {
-      console.error("Error signing in:", error.message);
+      console.error("Lỗi đăng nhap", error.message);
+      var errormessage = error.message;
+      errormessage.textContent = errormessage;
     });
 }
 
