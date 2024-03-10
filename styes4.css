@@ -1,6 +1,16 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 10px;
   width: 100%;
-  height: 800px;
+  height: 10000px;
   background: #00d2ff; /* fallback for old browsers */
 
   background: linear-gradient(
@@ -10,9 +20,104 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  font-size: 20px;
+  align-items: self-start;
+  gap: 13px;
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.stars {
+  margin-bottom: 20px;
+}
+
+/* .star {
+    display: none;
+} */
+
+.star + label {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star + label:before {
+  content: "\f005";
+  font-family: FontAwesome;
+}
+
+.star:checked + label {
+  color: #f90;
+}
+
+#lau button {
+  font-size: 24px;
+  background-color: #f90;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#lau button:hover {
+  background-color: #ffcc00;
+}
+
+#inputContainer {
+  margin-top: 20px;
+}
+
+#inputContainer input[type="text"] {
+  width: calc(100% - 80px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+#inputContainer button {
+  width: 80px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f90;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+#inputContainer button:hover {
+  background-color: #ffcc00;
+}
+
+.feedback-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.feedback-card {
+  width: calc(50% - 20px);
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rang p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
 }
 div.stars {
   width: 270px;
@@ -47,50 +152,4 @@ label.star:hover {
 label.star:before {
   content: "\f006";
   font-family: FontAwesome;
-}
-a {
-  color: blue;
-  background-color: white;
-  order: none;
-}
-a:hover {
-  background-color: black;
-  color: white;
-}
-a {
-  text-decoration: none;
-  background-color: transparent;
-  color: white;
-}
-
-a:hover {
-  background-color: transparent;
-  text-decoration: underline;
-}
-.checked {
-  color: orange;
-}
-.fee {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột bằng nhau */
-  gap: 20px; /* Khoảng cách giữa các div */
-}
-
-.fee {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột bằng nhau */
-  gap: 20px; /* Khoảng cách giữa các div */
-}
-
-.rang {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
-}
-
-.si {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
 }

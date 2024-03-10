@@ -1,4 +1,9 @@
-
+import { initializeApp } from "htps://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+import { getAnalytics } from "htttps://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClIYVxneZxm3qXk8wfBDj2z42QLbwQsn4",
@@ -10,23 +15,33 @@ const firebaseConfig = {
   measurementId: "G-K38BHVKRDR",
 };
 
-
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+const app =initializeApp(firebaseConfig);
+const analytics = firebase.auth(app);
 
-function signIn() {
+const SignUp =document.getElementById("SignUp");
+SignUp.addEventListener("click",function() {
+
+  signUp()
+})
+console.log(SignUp);
+
+function signUp() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  auth
-    .signInWithEmailAndPassword(email, password)
+  const auth = getAuth();
+    signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      showUserInfo(user);
+      console.log("đăng ký thành công" + user.email);
+
+      window.location.href ="index2.html";
     })
     .catch((error) => {
-      console.error("Error signing in:", error.message);
+      console.error("Lỗi đăng ký", error.message);
+      var errormessage = error.message;
+      errormessage.textContent = errormessage;
     });
 }
 

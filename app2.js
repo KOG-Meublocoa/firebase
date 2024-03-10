@@ -34,12 +34,12 @@ function signIn() {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log("dang nhap thanh cong:" + user.email);
+      console.log("đăng nhập thành công:" + user.email);
 
-      window.location.href = "index3.html";
+      window.location.href = "index1.html";
     })
     .catch((error) => {
-      console.error("Lỗi đăng nhap", error.message);
+      console.error("Lỗi đăng nhập", error.message);
       var errormessage = error.message;
       errormessage.textContent = errormessage;
     });
